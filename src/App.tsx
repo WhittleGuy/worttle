@@ -47,9 +47,7 @@ function App() {
           winner = false
         }
       }
-      console.log(stats)
       if (winner) {
-        console.log('correct')
         setComplete(true)
         setEnabled(false)
       } else if (attempts + 1 === 6) {

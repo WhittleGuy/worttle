@@ -48,6 +48,7 @@ const GameBoard = (props: GameBoardProps) => {
           {generateRows(guesses, status).map((row) => row)}
           <div className="complete">
             <h1>{complete ? 'You got it!' : 'Uh oh...'}</h1>
+            <h4>The word was {guesses[guesses.length - 2]}</h4>
             <div className="table">{generateCompleteTable(status)}</div>
             <button
               className="complete-button"
