@@ -39,7 +39,7 @@
 }
 
 .correct {
-  background: rgb(0, 107, 0);
+  background: #006b00;
 }
 
 .incorrect {
@@ -85,4 +85,13 @@
 
 .table-row {
   line-height: 0.5rem;
+}
+
+.complete-button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  background-color: #006b00;
+  border: none;
+  padding: 0.5rem;
 }

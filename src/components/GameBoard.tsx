@@ -47,8 +47,14 @@ const GameBoard = (props: GameBoardProps) => {
         <div className="gameboard">
           {generateRows(guesses, status).map((row) => row)}
           <div className="complete">
-            <h1>{complete ? 'You got it!' : 'Better luck next time'}</h1>
+            <h1>{complete ? 'You got it!' : 'Uh oh...'}</h1>
             <div className="table">{generateCompleteTable(status)}</div>
+            <button
+              className="complete-button"
+              onClick={() => location.reload()}
+            >
+              New Game
+            </button>
           </div>
         </div>
       ) : (
