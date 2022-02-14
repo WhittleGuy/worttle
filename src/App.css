@@ -42,12 +42,12 @@
   background: #006b00;
 }
 
-.incorrect {
+.absent {
   background: #222;
   color: #888;
 }
 
-.contained {
+.present {
   background: #9c8d00;
 }
 

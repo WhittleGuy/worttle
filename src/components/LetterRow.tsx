@@ -9,11 +9,16 @@ const generateBoxes = (letters: string[], status: string[]) => {
   const output = []
 
   for (let i = 0; i < 5; i++) {
+    // No letter in space
     if (i > letters.length - 1) output.push(<LetterBox letter="" status="" />)
+    // Letter is in array
     else {
-      if (status === undefined || i > status?.length - 1) {
+      // Status not yet defined (Answer not submitted)
+      if (status === undefined) {
         output.push(<LetterBox letter={letters[i]} status="" />)
-      } else output.push(<LetterBox letter={letters[i]} status={status[i]} />)
+      }
+      // Word has been submitted
+      else output.push(<LetterBox letter={letters[i]} status={status[i]} />)
     }
   }
 

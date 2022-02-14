@@ -10,8 +10,8 @@ const LetterBox = (props: LetterBoxProps) => {
 
   const classAdd = (status: string) => {
     if (status === 'correct') return 'letter-box correct'
-    else if (status === 'incorrect') return 'letter-box incorrect'
-    else if (status === 'contained') return 'letter-box contained'
+    else if (status === 'absent') return 'letter-box absent'
+    else if (status === 'present') return 'letter-box present'
     else return 'letter-box'
   }
 

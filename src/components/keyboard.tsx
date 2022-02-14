@@ -1,48 +1,49 @@
 interface KeyboardProps {
   correct: string[]
-  contained: string[]
-  incorrect: string[]
+  present: string[]
+  absent: string[]
   handleClick: (l: string) => void
 }
 
+export const keys = [
+  'Q',
+  'W',
+  'E',
+  'R',
+  'T',
+  'Y',
+  'U',
+  'I',
+  'O',
+  'P',
+  'A',
+  'S',
+  'D',
+  'F',
+  'G',
+  'H',
+  'J',
+  'K',
+  'L',
+  'Z',
+  'X',
+  'C',
+  'V',
+  'B',
+  'N',
+  'M',
+]
+
 const Keyboard = (props: KeyboardProps) => {
-  const { correct, contained, incorrect, handleClick } = props
+  const { correct, present, absent, handleClick } = props
 
   const classAdd = (l: string) => {
     if (correct.includes(l)) return 'keyboard-key correct'
-    else if (contained.includes(l)) return 'keyboard-key contained'
-    else if (incorrect.includes(l)) return 'keyboard-key incorrect'
+    else if (present.includes(l)) return 'keyboard-key present'
+    else if (absent.includes(l)) return 'keyboard-key absent'
     else return 'keyboard-key'
   }
 
-  const keys = [
-    'Q',
-    'W',
-    'E',
-    'R',
-    'T',
-    'Y',
-    'U',
-    'I',
-    'O',
-    'P',
-    'A',
-    'S',
-    'D',
-    'F',
-    'G',
-    'H',
-    'J',
-    'K',
-    'L',
-    'Z',
-    'X',
-    'C',
-    'V',
-    'B',
-    'N',
-    'M',
-  ]
   const topRow = keys.slice(0, 10)
   const midRow = keys.slice(10, 19)
   const botRow = keys.slice(19)
