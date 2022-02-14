@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  background: #222;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.keyboard-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard-key {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #888;
+  border-radius: 0.25rem;
+  min-width: 1.75rem;
+  padding: 0.2rem;
+  height: 3rem;
+  color: #fff;
+  margin: 0.15rem 0.1rem;
+}
+
+.correct {
+  background: rgb(0, 107, 0);
+}
+
+.incorrect {
+  background: #222;
+  color: #888;
+}
+
+.contained {
+  background: #9c8d00;
+}
+
+.func-button {
+  min-width: 3rem;
+}
+
+.letter-box {
+  border: 2px solid #333;
+  height: 4rem;
+  width: 4rem;
+  margin: 0.25rem 0.15rem;
+  color: #888;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.letter-row {
+  display: flex;
+  flex-direction: row;
+}
