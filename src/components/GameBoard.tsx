@@ -3,6 +3,7 @@ import LetterRow from './LetterRow'
 interface GameBoardProps {
   guesses: string[][]
   status: string[][]
+  complete: boolean | null
 }
 
 const generateRows = (guesses: string[][], status: string[][]) => {
@@ -17,13 +18,45 @@ const generateRows = (guesses: string[][], status: string[][]) => {
   return output
 }
 
+const generateCompleteTable = (status: string[][]) => {
+  const table = []
+  for (const stat of status) {
+    let row = ''
+    for (const s of stat) {
+      if (s === 'correct') {
+        row += '🟩'
+      }
+      if (s === 'incorrect') {
+        row += '⬛'
+      }
+      if (s === 'contained') {
+        row += '🟨'
+      }
+    }
+    table.push(row)
+  }
+  return table.map((row) => <p className="table-row">{row}</p>)
+}
+
 const GameBoard = (props: GameBoardProps) => {
-  const { guesses, status } = props
+  const { guesses, status, complete } = props
 
   return (
-    <div className="gameboard">
-      {generateRows(guesses, status).map((row) => row)}
-    </div>
+    <>
+      {complete !== null ? (
+        <div className="gameboard">
+          {generateRows(guesses, status).map((row) => row)}
+          <div className="complete">
+            <h1>{complete ? 'You got it!' : 'Better luck next time'}</h1>
+            <div className="table">{generateCompleteTable(status)}</div>
+          </div>
+        </div>
+      ) : (
+        <div className="gameboard">
+          {generateRows(guesses, status).map((row) => row)}
+        </div>
+      )}
+    </>
   )
 }
 

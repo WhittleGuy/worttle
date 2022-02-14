@@ -11,7 +11,7 @@ const generateBoxes = (letters: string[], status: string[]) => {
   for (let i = 0; i < 5; i++) {
     if (i > letters.length - 1) output.push(<LetterBox letter="" status="" />)
     else {
-      if (i > status.length - 1) {
+      if (status === undefined || i > status?.length - 1) {
         output.push(<LetterBox letter={letters[i]} status="" />)
       } else output.push(<LetterBox letter={letters[i]} status={status[i]} />)
     }
